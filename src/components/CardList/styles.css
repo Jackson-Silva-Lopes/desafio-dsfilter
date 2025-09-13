@@ -1,0 +1,16 @@
+.dsc-card-list {    
+    width: 100%;
+  
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    background-color: var(--dsc-color-three);
+    padding: 20px;
+    padding-bottom: 5px;
+
+}
+
+

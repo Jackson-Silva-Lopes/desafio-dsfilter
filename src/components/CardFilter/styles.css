@@ -1,0 +1,59 @@
+.custom-filter {
+
+    width: 100%;
+    height: 200px;
+    margin-top: 20px;
+    display: flex;
+
+    align-items: start;
+    border-radius: 5px;
+    background-color: var(--dsc-color-three);
+}
+
+
+
+.custom-form {
+
+    margin-top: 20px;
+    margin-left: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+
+
+
+}
+
+.custom-form input {
+    width: 200px;
+    height: 40px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #c2c2c2;
+    font-size: 16px;
+    outline: none;
+    box-shadow: none;
+    padding-left: 10px;
+}
+
+.custom-form button {
+    background-color: var(--dsc-color-two);
+    width: 200px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid var(--dsc-color-two);
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+
+
+}
+
+.custom-input::placeholder {
+    color: #c2c2c2;  
+    font-size: 16px;
+    font-weight: 400;
+    
+}
