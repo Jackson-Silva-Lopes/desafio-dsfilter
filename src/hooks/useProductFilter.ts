@@ -6,7 +6,12 @@ type FormData = {
     priceMax?: number;
 };
 
-export function useProductFilter(initialList: ProductDTO[]) {
+type filterProps = {
+    filterFunction: (min: number, max: number) => ProductDTO[];
+};
+
+
+export function useProductFilter(initialList: ProductDTO[], { filterFunction }:filterProps) {
     
     const [formData, setFormData] = useState<FormData>({});
     const [products, setProducts] = useState<ProductDTO[]>(initialList);
@@ -19,17 +24,13 @@ export function useProductFilter(initialList: ProductDTO[]) {
         });
     }
 
-    function findByPrice(min: number, max: number): ProductDTO[] {
-        return initialList
-            .filter((x) => x.price >= min && x.price <= max)
-            .sort((x, y) => x.price - y.price);
-    }
+   
 
     function filtrar() {
         const minVal = formData.priceMin || 0;
         const maxVal = formData.priceMax || Number.MAX_VALUE;
 
-        const lista = findByPrice(minVal, maxVal);
+        const lista = filterFunction(minVal, maxVal);
         setProducts(lista);
     }
 

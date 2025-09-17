@@ -1,4 +1,4 @@
-import { ProductDTO } from '../models/ProductDTO';
+import { ProductDTO } from '../../models/ProductDTO';
 import './styles.css'
 type Props = {
   product: ProductDTO[];
