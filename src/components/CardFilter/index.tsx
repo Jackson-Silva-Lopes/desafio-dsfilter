@@ -3,15 +3,23 @@ import "./styles.css";
 import CardList from "../CardList";
 import { useProductFilter } from "../../hooks/useProductFilter";
 import { ProductDTO } from "../../models/ProductDTO";
-import { findByPrice } from "../../utils/funcoes";
+
 
 
 type Props = {
+  
   list: ProductDTO[];
+  
+ onFilter: (min: number, max: number) => void;
+
 };
 
-export default function CardFilter({ list }: Props) {
-  const { formData, products, handleInputChange, filtrar } = useProductFilter(list, { filterFunction: findByPrice });
+
+
+
+export default function CardFilter({ list , onFilter }: Props) {
+
+  const { formData, handleInputChange, filtrar } = useProductFilter(onFilter );
 
   return (
     <>
@@ -49,7 +57,7 @@ export default function CardFilter({ list }: Props) {
           </div>
         </form>
       </div>
-      <CardList list={products} />
+      <CardList list={list} />
     </>
   );
 }
